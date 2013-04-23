@@ -7,7 +7,6 @@ ReadingList = new Meteor.Collection("readinglist");
 ReadLater = new Meteor.Collection("readlater");
 Popular = new Meteor.Collection("popular");
 Trends = new Meteor.Collection("trends");
-Items = new Meteor.Collection(null);
 SearchResults = new Meteor.Collection(null);
 SourcesFollowedByUser = new Meteor.Collection(null);
 Imports = new Meteor.Collection(null);
@@ -44,6 +43,10 @@ Tools = {
     var domainParts = url.match(/^((http[s]?|ftp):\/\/)?\/?([^\/\.]+\.)*?([^\/\.]+\.[^:\/\s\.]{2,3}(\.[^:\/\s\.]‌​{2,3})?(:\d+)?)($|\/)([^#?\s]+)?(.*?)?(#[\w\-]+)?$/);
     var domain = (domainParts[3] != undefined ? domainParts[3]+domainParts[4] : domainParts[4]);
     return domain;
+  },
+
+  trimWhitespaces: function(str) {
+    return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
   },
 
   /*

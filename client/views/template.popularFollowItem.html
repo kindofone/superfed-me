@@ -1,14 +1,17 @@
 <template name="popularFollowItem">
-  <div class="list-item" data-id="{{sourceId}}">
+  <article class="list-item" data-id="{{sourceId}}">
     <div class="list-item-content">
-      <a data-source="{{sourceId}}" href="http://{{host}}" target="_blank">
-        <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
-        <span class="list-item-title ellipsis">{{author}}</span>
-      </a>
-      <br />
-      <span class="list-item-subtext">
-        {{followers}} followers
-      </span>
+      <header>
+        <a data-source="{{sourceId}}" href="http://{{host}}" target="_blank" title="{{author}}">
+          <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
+          <span class="list-item-author">{{author}}</span>
+        </a>
+      </header>
+      <footer>
+        <span class="list-item-subtext">
+          {{followers}} followers
+        </span>
+      </footer>
     </div>
-  </div>
+  </article>
 </template>

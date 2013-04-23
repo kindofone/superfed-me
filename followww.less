@@ -23,8 +23,8 @@
 body {
     font-family: 'Open Sans', 'Alef', Arial, sans-serif;
     font-weight: 200;
-    font-size: 90%;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 18px;
     background: #f0f0f0;
     background-image: url(resources/images/cloth_alike_pattern.png);
 }
@@ -255,6 +255,10 @@ strong {
     to {transform: rotate(360deg);}
 }
 
+#main.well {
+    padding-bottom: 0;
+}
+
 .well {
     -webkit-box-shadow: inset 0px 1px 1px white, 0 1px 1px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: inset 0px 1px 1px white, 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -330,11 +334,23 @@ strong {
 
     .list-item-icon {
         width: 16px;
+        display: inline-block;
         vertical-align: middle;
+    }
+
+    .list-item-author {
+        color: #999;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .list-item-title {
         font-weight: 600;
+        line-height: 20px;
 
         &:hover {
             text-decoration: underline;
@@ -343,17 +359,18 @@ strong {
 
     .list-item-snippet {
         font-weight: 300;
+        line-height: 20px;
     }
 
     .list-item-subtext {
         color: #999;
-        font-size: 80%;
+        font-size: 12px;
         max-width: 30%;
     }
 
     .list-item-date {
         color: #999;
-        font-size: 80%;
+        font-size: 12px;
     }
 }
 
@@ -506,7 +523,7 @@ a .list-item-subtext {
         text-align: center;
         padding-left: 0;
         padding-right: 0;
-        font-size: 0.8em;
+        font-size: 12px;
 
         strong {
             font-size: 1.2em;
@@ -558,6 +575,10 @@ a .list-item-subtext {
 }
 
 .popular-follows {
+    .list-item-author {
+        color: inherit;
+    }
+
     .fluid-part {
         .list-item {
             .list-item-subtext {
@@ -568,7 +589,7 @@ a .list-item-subtext {
 }
 
 .copyrights {
-    font-size: 0.8em;
+    font-size: 12px;
 
     .subtext {
         font-size: 0.95em;

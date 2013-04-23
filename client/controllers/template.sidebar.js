@@ -31,7 +31,11 @@ Template.sidebar.popular = function() {
 };
 
 Template.sidebar.trends = function() {
-  return Trends.find({}, {sort: {favorites: -1}});
+  var trendsQuery = Trends.find({}, {sort: {favorites: -1}});
+  var wrapedTrends = Followww.wrap(trendsQuery, 'updateId');
+  return wrapedTrends;
+
+  // return Trends.find({}, {sort: {favorites: -1}});
 };
 
 Template.sidebar.events({

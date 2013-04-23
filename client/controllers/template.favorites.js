@@ -4,6 +4,10 @@ Template.favorites.favorites = function() {
     return wrapedFavorites;
 };
 
+Template.favorites.favoritesAmount = function() {
+  return Favorites.find().count();
+};
+
 Template.favorites.events({
     'click .remove-btn': function (event) {
     	var updateItemId = $(event.target).parents('[data-id]').data('id');

@@ -8,9 +8,9 @@
       <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
     </div>
     {{#each readLater}}
-      {{> readLaterItem}}
+      {{> updateItem}}
     {{/each}}
-    {{#unless readAmount}}
+    {{#unless readLaterAmount}}
       <div class="list-item">
         <span>You haven't saved anything to read later yet.</span>
       </div>

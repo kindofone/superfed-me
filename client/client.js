@@ -99,13 +99,17 @@ Followww = {
   },
 
   wrap: function(collection, updateIdPropName) {
-    Items.remove({});
+    var Items = new Meteor.Collection(null);
     collection.forEach(function(item) {
       item.itemId = item[updateIdPropName];
       delete item[updateIdPropName];
 
       if (updateIdPropName != '_id') {
         delete item._id;
+      }
+
+      if (item.contentSnippet) {
+        item.contentSnippet = Tools.trimWhitespaces(item.contentSnippet);
       }
 
       var favoritesCount = Favorites.find({updateId: item.itemId}).count();

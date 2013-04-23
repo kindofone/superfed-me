@@ -6,24 +6,29 @@
     <a href="#" class="close">&times;</a>
   </div>
   {{/if}}
-  <div class="list-item rtl-{{isRTL}} favorite-{{isFavorite}} read-{{isRead}} later-{{isLater}} new-{{isNew}} lastSeen-{{isLastSeen}}" data-id="{{itemId}}">
+  <article class="list-item rtl-{{isRTL}} favorite-{{isFavorite}} read-{{isRead}} later-{{isLater}} new-{{isNew}} lastSeen-{{isLastSeen}}" data-id="{{itemId}}">
     {{> shareOverlay}}
     <div class="list-item-content">
-      <a data-source="{{sourceId}}" href="http://{{host}}" target="_blank" title="{{author}}">
-        <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
-      </a>
-      <a class="list-item-link" href="{{url}}" target="_blank">
-        <span class="list-item-title">{{title}}</span>
-      </a><br />
+      <header>
+        <a data-source="{{sourceId}}" href="http://{{host}}" target="_blank" title="{{author}}">
+          <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
+          <span class="list-item-author">{{author}}</span>
+        </a>
+      </header>
+      <span class="list-item-title">
+        <a class="list-item-link" href="{{url}}" target="_blank">{{title}}</a>
+      </span><br />
       <span class="list-item-snippet">
         {{contentSnippet}}
-      </span><br />
-      {{> updateSubtext}}
+      </span>
+      <footer>
+        {{> updateSubtext}}
+      </footer>
     </div>
     <div class="list-item-actions">
       <a class="favorite-btn btn btn-small"><i class="icon-heart"></i> Favorite</a>
       <a class="readLater-btn btn btn-small"><i class="icon-bookmark"></i> Later</a>
       <a class="share-btn btn btn-small"><i class="icon-share-alt"></i> Share</a>
     </div>
-  </div>
+  </article>
 </template>
