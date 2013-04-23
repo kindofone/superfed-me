@@ -4,10 +4,6 @@ Template.updates.updates = function () {
 	return wrapedUpdates;
 };
 
-Template.updates.clock = function () {
-	return Session.get('clock');
-}
-
 Template.updates.unseenItems = function () {
 	return (Updates.find({timestamp: {$gt: Session.get('lastSeenTimestamp')}}, {sort: {timestamp: -1}}).count() > 0 ? true : false);
 };
