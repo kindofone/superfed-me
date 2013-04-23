@@ -1,0 +1,28 @@
+<template name="searchResults">
+  <h4>
+    Search Results
+  </h4>
+  <div class="searchResults">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+    </div>
+    {{#if isRSS}}
+      <div class="list-item follow-url">
+        <a class="follow-url-label btn btn-small">{{searchQuery}}</a>
+        {{#if isFollowing}}
+          <a class="follow-url-btn btn btn-small btn-success disabled" value="add-follow" style="pointer-events: none;"><i class="icon-ok"></i> Following</a>
+        {{else}}
+          <a class="follow-url-btn btn btn-small btn-primary" value="add-follow"><i class="icon-ok"></i> Follow</a>
+        {{/if}}
+      </div>
+    {{/if}}
+    {{#each searchResults}}
+      {{> searchResultItem}}
+    {{/each}}
+    {{#unless searchResultsAmount}}
+      <div class="list-item">
+        <span>No matches. If at first you don't succeed, dust yourself off and try again!</span>
+      </div>
+    {{/unless}}
+  </div>
+</template>

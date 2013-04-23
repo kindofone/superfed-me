@@ -1,0 +1,20 @@
+<template name="searchResultItem">
+  <div class="list-item" data-feedurl="{{feedUrl}}">
+    <div class="list-item-content">
+      <a data-source-url="{{feedUrl}}" href="{{feedUrl}}" target="_blank">
+        <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
+        <span class="list-item-title">{{author}}</span>
+      </a><br />
+      <a href="{{url}}" target="_blank">
+        <span class="list-item-subtext ellipsis">{{url}}</span>
+      </a>
+    </div>
+    <div class="list-item-actions">
+      {{#if isFollowing}}
+        <a class="follow-btn btn btn-small btn-success disabled" style="pointer-events: none;"><i class="icon-ok"></i> Following</a>
+      {{else}}
+        <a class="follow-btn btn btn-small" value="add-follow"><i class="icon-ok"></i> Follow</a>
+      {{/if}}
+    </div>
+  </div>
+</template>

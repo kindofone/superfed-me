@@ -1,0 +1,19 @@
+<template name="favorites">
+  <h4>
+    <i class="icon-heart"></i>
+    Favorites
+  </h4>
+  <div class="favorites">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+    </div>
+    {{#each favorites}}
+      {{> favoriteItem}}
+    {{/each}}
+    {{#unless favoritesAmount}}
+      <div class="list-item">
+        <span>You haven't favorited anything yet.</span>
+      </div>
+    {{/unless}}
+  </div>
+</template>

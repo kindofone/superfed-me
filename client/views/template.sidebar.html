@@ -1,0 +1,103 @@
+<template name="sidebar">
+  <div id="sidebar" class="span4">
+    <div class="well well-small">
+      <div class="row-fluid">
+        <div class="span12 fluid-part">
+          {{loginButtons}}
+          {{#if currentUser}}
+            {{#if newUpdatesAmount}}
+              <a id="homePage-btn" class="pull-right">
+                <i class="icon-refresh"></i>
+                <strong>{{newUpdatesAmount}}</strong>
+              </a>
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+      {{#if currentUser}}
+      <div class="user-info row-fluid">
+        <div class="span3 fluid-part centered">
+          <a id="favoritesPage-btn">
+            <strong>{{favoritesAmount}}</strong><br />Favorites
+          </a>
+        </div>
+        <div class="span3 fluid-part centered">
+          <a id="readingListPage-btn">
+            <strong>{{readAmount}}</strong><br />Read
+          </a>
+        </div>
+        <div class="span3 fluid-part centered">
+          <a id="readLaterPage-btn">
+            <strong>{{readLaterAmount}}</strong><br />Later
+          </a>
+        </div>
+        <div class="span3 fluid-part centered">
+          <a id="followingPage-btn">
+            <strong>{{followingAmount}}</strong><br />Following
+          </a>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+    {{#if currentUser}}
+    <div class="well well-small hidden-phone">
+      <div class="row-fluid">
+        <div class="span12 fluid-part">
+          <strong>Bookmarklet</strong>
+          <a href="#" data-toggle="tooltip" title="Drag this bookmarklet to your bookmarks bar and use it whenever you want to start following any site or save an article that you read anywhere.">
+            <i class="icon-question-sign"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span12 fluid-part">
+          <a class="btn btn-small" title="Add the current address on superfed.me" href="javascript: (function () {
+        var jsCode = document.createElement('script');
+        jsCode.setAttribute('src', 'http://superfedme.meteor.com/bookmarklet/bookmarklet.js');
+        document.body.appendChild(jsCode);
+      }());"><i class="icon-plus"></i> Add on superfed.me</a>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    <div class="well well-small hidden-phone">
+      <div class="row-fluid">
+        <div class="span12 fluid-part">
+          <strong>Popular Follows</strong>
+        </div>
+      </div>
+      <div class="popular-follows row-fluid">
+        <div class="span12 fluid-part">
+          {{#each popular}}
+            {{> popularFollowItem}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="well well-small hidden-phone">
+      <div class="row-fluid">
+        <div class="span12 fluid-part">
+          <strong>Trending Now</strong>
+        </div>
+      </div>
+      <div class="trends row-fluid">
+        <div class="span12 fluid-part">
+          {{#each trends}}
+            {{> trendItem}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="well well-small hidden-phone">
+      <div class="copyrights row-fluid">
+        <div class="span12 fluid-part">
+          2013 &copy; All rights reserved.<br >
+          <span class="subtext">
+            Created by <a href="http://www.yogevahuvia.com/" target="_blank">Yogev Ahuvia</a> | <a href="https://twitter.com/kindofone" target="_blank">@kindofone</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</template>

@@ -1,0 +1,28 @@
+<template name="main">
+  <div id="main" role="main" class="span8 well well-small">
+    {{#if homePage}}
+      {{> updates}}
+    {{/if}}
+    {{#if sourceFeedPage}}
+      {{> sourceFeed}}
+    {{/if}}
+    {{#if favoritesPage}}
+      {{> favorites}}
+    {{/if}}
+    {{#if readingListPage}}
+      {{> readingList}}
+    {{/if}}
+    {{#if readLaterPage}}
+      {{> readLater}}
+    {{/if}}
+    {{#if followingPage}}
+      {{> following}}
+    {{/if}}
+    {{#if searchResultsPage}}
+      {{> searchResults}}
+    {{/if}}
+    {{#if externalPage}}
+      {{> external}}
+    {{/if}}
+  </div>
+</template>

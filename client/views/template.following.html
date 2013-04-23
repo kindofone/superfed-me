@@ -1,0 +1,19 @@
+<template name="following">
+  <h4>
+    <i class="icon-bullhorn"></i>
+    Following
+  </h4>
+  <div class="following">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+    </div>
+    {{#each following}}
+      {{> followingItem}}
+    {{/each}}
+    {{#unless followingAmount}}
+      <div class="list-item">
+        <span>You are not following anyone right now.</span>
+      </div>
+    {{/unless}}
+  </div>
+</template>

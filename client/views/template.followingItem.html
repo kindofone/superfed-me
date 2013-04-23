@@ -1,0 +1,18 @@
+<template name="followingItem">
+  <div class="list-item" data-id="{{followId}}">
+    {{> shareOverlay}}
+    <div class="list-item-content">
+      <a data-source-url="{{feedUrl}}" href="{{feedUrl}}" target="_blank">
+        <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
+        <span class="list-item-title">{{author}}</span>
+      </a><br />
+      <a href="{{url}}" target="_blank">
+        <span class="list-item-subtext ellipsis">{{url}}</span>
+      </a>
+    </div>
+    <div class="list-item-actions">
+      <a class="share-btn btn btn-small"><i class="icon-share-alt"></i> Share</a>
+      <a class="remove-btn btn btn-small btn-danger"><i class="icon-remove"></i> Remove</a>
+    </div>
+  </div>
+</template>

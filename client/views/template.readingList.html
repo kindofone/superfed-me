@@ -1,0 +1,19 @@
+<template name="readingList">
+  <h4>
+    <i class="icon-eye-open"></i>
+    Reading List
+  </h4>
+  <div class="readingList">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+    </div>
+    {{#each readingList}}
+      {{> readingListItem}}
+    {{/each}}
+    {{#unless readAmount}}
+      <div class="list-item">
+        <span>You haven't read anything yet.</span>
+      </div>
+    {{/unless}}
+  </div>
+</template>

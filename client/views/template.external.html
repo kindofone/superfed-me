@@ -1,0 +1,44 @@
+<template name="external">
+	  <h4>
+	    <i class="icon-plus"></i>
+	    Add on superfed.me
+	  </h4>
+	  <div class="external">
+	  	<div class="list-item toolbar">
+	  		<a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+	  		<a class="back-to-source-btn btn btn-small"><i class="icon-globe"></i> Continue Browsing</a>
+	  	</div>
+	  	<div class="list-item toolbar">
+	  		Had a nice read? Add it to your Reading List:
+	    </div>
+	  	<div class="list-item">
+		  <div class="list-item-content">
+		    <a href="{{url}}" target="_blank">
+		      <img class="list-item-icon" src="http://www.google.com/s2/u/0/favicons?domain={{host}}" />
+		      <span class="list-item-title">{{sourceTitle}}</span>
+		    </a><br />
+      		<span class="list-item-snippet">{{contentSnippet}}</span><br />
+		    <a href="{{url}}" target="_blank">
+		      <span class="list-item-subtext ellipsis">{{url}}</span>
+		    </a>
+		  </div>
+		  <div class="list-item-actions">
+      		<a class="read-btn btn btn-small"><i class="icon-eye-open"></i> I Read It</a>
+		    <a class="favorite-btn btn btn-small"><i class="icon-heart"></i> Favorite</a>
+		    <a class="readLater-btn btn btn-small"><i class="icon-bookmark"></i> Later</a>
+		    <a class="share-btn btn btn-small"><i class="icon-share-alt"></i> Share</a>
+		  </div>
+		</div>
+	  	<div class="list-item toolbar">
+	  		Want to keep being updated on that source? Follow its feeds:
+	    </div>
+		{{#each searchResults}}
+	      {{> searchResultItem}}
+	    {{/each}}
+	    {{#unless searchResultsAmount}}
+	      <div class="list-item">
+	        <span>No feeds found for this site. Sorry.</span>
+	      </div>
+	    {{/unless}}
+	  </div>
+</template>

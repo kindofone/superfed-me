@@ -1,0 +1,1 @@
+location.href = 'http://superfedme.meteor.com/external/'+encodeURIComponent(location.href);

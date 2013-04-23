@@ -1,0 +1,31 @@
+<template name="sourceFeed">
+  <h4>
+    <i class="icon-list"></i>
+    Feed | {{author}}
+  </h4>
+  <div class="updates">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+      {{#if isFollowing}}
+        <a class="follow-btn btn btn-small btn-success disabled pull-right" style="pointer-events: none;"><i class="icon-ok"></i> Following</a>
+      {{else}}
+        <a class="follow-btn btn btn-small pull-right"><i class="icon-ok"></i> Follow</a>
+      {{/if}}
+    </div>
+    {{#each updates}}
+      {{> updateItem}}
+    {{/each}}
+    {{#unless currentUser}}
+      <div class="list-item">
+        <span>Sign in or Log in to get superfed!</span>
+      </div>
+    {{/unless}}
+    {{#if currentUser}}
+      {{#unless followingAmount}}
+        <div class="list-item">
+          <span>Welcome! Add some sites to see updates.</span>
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>

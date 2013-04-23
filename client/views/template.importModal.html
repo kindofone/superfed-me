@@ -1,0 +1,33 @@
+<template name="importModal">
+  <div id="import-modal" class="modal hide fade" tabindex="-1">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Modal header</h3>
+    </div>
+    <div class="modal-body">
+    	<table class="table">
+    		<thead>
+    			<th>
+    				Found {{importsCount}} sources:
+    			</th>
+    		</thead>
+    		<tbody>
+				{{#each imports}}
+				<tr>
+					<td>
+						<a href="{{htmlUrl}}" target="_blank">{{title}}</a>
+					</td>
+				</tr>
+				{{/each}}
+    		</tbody>
+		</table>
+    </div>
+    <div class="modal-footer">
+		<div class="progress progress-striped">
+		  <div class="bar" style="width: {{importProgress}}%;"></div>
+		</div>
+		<a class="cancel-btn btn">Cancel</a>
+		<a class="import-btn btn btn-primary">Import All</a>
+    </div>
+  </div>
+</template>

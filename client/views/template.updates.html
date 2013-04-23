@@ -1,0 +1,29 @@
+<template name="updates">
+  <h4>
+    <i class="icon-list"></i>
+    Feed
+    <span class="clock pull-right">{{clock}}</span>
+  </h4>
+  <div class="updates">
+    {{#if unseenItems}}
+    <div class="list-item toolbar notification">
+      <a id="load-unseen" class="btn btn-small" value="load-unseen"><i class="icon-refresh"></i> {{unseenAmount}}</a>
+    </div>
+    {{/if}}
+    {{#each updates}}
+      {{> updateItem}}
+    {{/each}}
+    {{#unless currentUser}}
+      <div class="list-item">
+        <span>Sign in or Log in to get superfed!</span>
+      </div>
+    {{/unless}}
+    {{#if currentUser}}
+      {{#unless followingAmount}}
+        <div class="list-item">
+          <span>Welcome! Add some sites to see updates.</span>
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>

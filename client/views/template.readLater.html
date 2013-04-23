@@ -1,0 +1,19 @@
+<template name="readLater">
+  <h4>
+    <i class="icon-bookmark"></i>
+    Read Later
+  </h4>
+  <div class="readLater">
+    <div class="list-item toolbar">
+      <a class="back-home-btn btn btn-small btn-success"><i class="icon-list"></i> Back to Feed</a>
+    </div>
+    {{#each readLater}}
+      {{> readLaterItem}}
+    {{/each}}
+    {{#unless readAmount}}
+      <div class="list-item">
+        <span>You haven't saved anything to read later yet.</span>
+      </div>
+    {{/unless}}
+  </div>
+</template>
