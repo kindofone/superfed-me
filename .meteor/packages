@@ -8,8 +8,8 @@ preserve-inputs
 bootstrap
 jquery
 http
-accounts-ui
 accounts-twitter
 accounts-facebook
 less
 accounts-google
+accounts-ui
